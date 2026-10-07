@@ -20,7 +20,11 @@ dev = [
 [[package]]
 name = "freecad-a2plus"
 version = "0.4.68"
-source = { directory = "../../../fcppm_recipes/recipes/freecad-a2plus" }
+source = { registry = "https://gitea.insleker.org/api/packages/inkr_org/pypi/simple/" }
+sdist = { url = "https://gitea.insleker.org/api/packages/inkr_org/pypi/files/freecad-a2plus/0.4.68/freecad_a2plus-0.4.68.tar.gz", hash = "sha256:7149d41b437e4d45a4998ec81f3efa44f86ddd71ecfc6209d4983369ea86c71b" }
+wheels = [
+    { url = "https://gitea.insleker.org/api/packages/inkr_org/pypi/files/freecad-a2plus/0.4.68/freecad_a2plus-0.4.68-py3-none-any.whl", hash = "sha256:44d900f07423b72c2d0c949a0b0d884a37866f532d7151f670e6a10a38f2a471" },
+]
 
 [[package]]
 name = "freecad-fasteners"
@@ -47,7 +51,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "freecad-a2plus", directory = "../../../fcppm_recipes/recipes/freecad-a2plus" },
+    { name = "freecad-a2plus", specifier = ">=0.4.68" },
     { name = "freecad-fasteners", specifier = ">=0.5.67" },
 ]
 
