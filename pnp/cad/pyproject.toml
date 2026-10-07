@@ -1,0 +1,22 @@
+[project]
+name = "lumenpnp"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "freecad-a2plus>=0.4.68",
+    "freecad-fasteners>=0.5.67",
+]
+
+[dependency-groups]
+dev = [
+    "fcppm",
+]
+
+[tool.uv.sources]
+fcppm = { path = "../../../fcppm", editable = true }
+freecad-a2plus = { path = "../../../fcppm_recipes/recipes/freecad-a2plus" }
+
+# freecad-a2plus is not on the index yet: built from the local recipe with the venv's (editable,
+# unreleased) fcppm
+[tool.uv]
+no-build-isolation-package = ["freecad-a2plus"]
