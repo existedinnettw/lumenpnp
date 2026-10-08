@@ -26,6 +26,7 @@ Upstream = "https://github.com/opulo-inc/lumenpnp"
 dev = ["fcppm>=0.2.4"]
 
 [tool.fcppm]
+branch = "fcppm"  # the packaging lives here; main tracks upstream
 tags = ["pick-and-place", "assembly"]
 
 [tool.uv]
