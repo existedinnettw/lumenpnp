@@ -19,6 +19,7 @@ The model is published to the same index as the fcppm package `lumenpnp`: this d
 
 ```bash
 uv add lumenpnp
+uv add --dev fcppm
 uv run fcppm sync                    # 3rd/lumenpnp, 3rd/freecad-*
 uv run fcppm run 3rd/lumenpnp/assembly.FCStd
 ```
