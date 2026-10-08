@@ -1,14 +1,34 @@
+[build-system]
+requires = ["fcppm>=0.2.4"]
+build-backend = "fcppm"
+
 [project]
 name = "lumenpnp"
-version = "0.1.0"
-requires-python = ">=3.14"
+version = "4.1.0.post1"  # upstream v4.1.0 plus its later CAD fixes (squaring bracket, z-gantry)
+description = "Open source pick and place machine (FreeCAD model)"
+readme = "README.md"
+license = "CERN-OHL-W-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Opulo" }]
+requires-python = ">=3.12"  # FreeCAD 1.1's Python (the snap's 1.1.1 runs 3.12)
 dependencies = [
-    "freecad-a2plus>=0.4.68",
-    "freecad-fasteners>=0.5.67",
-    "freecad-honeycomb>=0.2024.8.27",
+    "freecad-a2plus==0.4.68",          # A2plus workbench: assembly.FCStd
+    "freecad-fasteners==0.5.67",       # Fasteners workbench
+    "freecad-honeycomb==0.2024.8.27",  # Honeycomb macro: FDM/control-box.FCStd
 ]
 
+[project.urls]
+Homepage = "https://github.com/existedinnettw/lumenpnp"
+Repository = "https://github.com/existedinnettw/lumenpnp"
+Upstream = "https://github.com/opulo-inc/lumenpnp"
+
 [dependency-groups]
-dev = [
-    "fcppm>=0.2.3",
-]
+dev = ["fcppm>=0.2.4"]
+
+[tool.fcppm]
+branch = "fcppm"  # the packaging lives here; main tracks upstream
+tags = ["pick-and-place", "assembly"]
+
+[tool.uv]
+# rebuild on every `uv sync`, which runs the fcppm develop hook (package.xml)
+reinstall-package = ["lumenpnp"]
