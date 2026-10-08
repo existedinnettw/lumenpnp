@@ -4,17 +4,11 @@ requires-python = ">=3.14"
 
 [[package]]
 name = "fcppm"
-version = "0.2.2"
-source = { editable = "../../../fcppm" }
-
-[package.metadata]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "pre-commit", specifier = ">=4.0.0" },
-    { name = "pytest", specifier = ">=8" },
-    { name = "ruff", specifier = ">=0.6" },
-    { name = "ty", specifier = ">=0.0.1" },
+version = "0.2.3"
+source = { registry = "https://gitea.insleker.org/api/packages/inkr_org/pypi/simple/" }
+sdist = { url = "https://gitea.insleker.org/api/packages/inkr_org/pypi/files/fcppm/0.2.3/fcppm-0.2.3.tar.gz", hash = "sha256:7ba3561df1e0da1b8b9be0affadc8dcbca7e7db037fe82426856209c5874e229" }
+wheels = [
+    { url = "https://gitea.insleker.org/api/packages/inkr_org/pypi/files/fcppm/0.2.3/fcppm-0.2.3-py3-none-any.whl", hash = "sha256:6a6052b070ef13d176471a700dfabacad9510f5652bbdf747f3d767b3912ffb7" },
 ]
 
 [[package]]
@@ -36,12 +30,25 @@ wheels = [
 ]
 
 [[package]]
+name = "freecad-honeycomb"
+version = "0.2024.8.27"
+source = { registry = "https://gitea.insleker.org/api/packages/inkr_org/pypi/simple/" }
+dependencies = [
+    { name = "fcppm" },
+]
+sdist = { url = "https://gitea.insleker.org/api/packages/inkr_org/pypi/files/freecad-honeycomb/0.2024.8.27/freecad_honeycomb-0.2024.8.27.tar.gz", hash = "sha256:9367794700bf4a724b52d1612f99b822ce4da0481a0caea88905f3fae44c8d67" }
+wheels = [
+    { url = "https://gitea.insleker.org/api/packages/inkr_org/pypi/files/freecad-honeycomb/0.2024.8.27/freecad_honeycomb-0.2024.8.27-py3-none-any.whl", hash = "sha256:d778c09893262730ede6e9922f067b71456ca34dc408031080fd7fbdb6f12bbe" },
+]
+
+[[package]]
 name = "lumenpnp"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "freecad-a2plus" },
     { name = "freecad-fasteners" },
+    { name = "freecad-honeycomb" },
 ]
 
 [package.dev-dependencies]
@@ -53,7 +60,8 @@ dev = [
 requires-dist = [
     { name = "freecad-a2plus", specifier = ">=0.4.68" },
     { name = "freecad-fasteners", specifier = ">=0.5.67" },
+    { name = "freecad-honeycomb", specifier = ">=0.2024.8.27" },
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "fcppm", editable = "../../../fcppm" }]
+dev = [{ name = "fcppm", specifier = ">=0.2.3" }]

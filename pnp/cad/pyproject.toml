@@ -5,13 +5,10 @@ requires-python = ">=3.14"
 dependencies = [
     "freecad-a2plus>=0.4.68",
     "freecad-fasteners>=0.5.67",
+    "freecad-honeycomb>=0.2024.8.27",
 ]
 
 [dependency-groups]
 dev = [
-    "fcppm",
+    "fcppm>=0.2.3",
 ]
-
-[tool.uv.sources]
-fcppm = { path = "../../../fcppm", editable = true }
-
